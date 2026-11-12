@@ -1,0 +1,26 @@
+SPIDER AI — AROSH EDITION
+Phone-only cloud APK build
+
+You do NOT need to install the 500 MB Android IDE on your phone.
+This project includes a GitHub Actions workflow that builds the APK online.
+
+PHONE STEPS
+1. Sign in to GitHub in your browser or GitHub app.
+2. Create a NEW repository named SpiderAI (Public is easiest for this workflow).
+3. Upload the CONTENTS of this SpiderAI folder to the repository root.
+   Important: upload app/, build.gradle.kts, settings.gradle.kts, gradle.properties,
+   and .github/ . Do not upload the outer SpiderAI folder as an extra nested folder.
+4. Open the repository page in your browser.
+5. Tap Actions. If GitHub asks, enable Actions for the repository.
+6. Choose "Build SPIDER AI APK" and tap "Run workflow".
+   (A push to the main branch also starts a build automatically.)
+7. Wait until the workflow finishes with a green check.
+8. Open the completed workflow run, scroll to Artifacts, and download
+   SPIDER-AI-AROSH-APK.
+9. Extract the downloaded artifact ZIP. Install app-debug.apk on your phone.
+   If Android asks, allow installation from that browser/file manager.
+
+NOTES
+- This is a real Android APK build, not a web app.
+- The current JARVIS voice is a local text-to-speech demo; it is not yet a live AI chatbot.
+- Health, web-fluid, altitude, temperature and suit status are demo values.
