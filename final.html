@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta charset="UTF-8">
+<title>SPIDER SUIT</title>
+<style>
+* { box-sizing:border-box; }
+body { margin:0; background:#01030d; color:white; font-family:Arial; padding:10px; }
+.bg { position:fixed; inset:0; z-index:-1; background: radial-gradient(circle at 50% 15%, rgba(0,80,150,0.4) 0%, transparent 55%), repeating-linear-gradient(0deg, rgba(0,212,255,0.05) 0 1px, transparent 1px 25px), repeating-linear-gradient(90deg, rgba(0,212,255,0.05) 0 1px, transparent 1px 25px); }
+.bg:before { content:""; position:absolute; top:40px; left:50%; width:320px; height:320px; transform:translateX(-50%); border:1px solid rgba(0,212,255,0.3); border-radius:50%; box-shadow:0 0 0 35px rgba(0,212,255,0.05), 0 0 0 70px rgba(0,212,255,0.03); }
+.eyes { display:flex; justify-content:center; }
+.eyes svg { width:100%; max-width:360px; }
+.top { border:1px solid #ff2a2a; background:#0a0f22; padding:9px; text-align:center; clip-path:polygon(20px 0, calc(100% - 20px) 0, 100% 50%, calc(100% - 20px) 100%, 20px 100%, 0 50%); }
+.top b { color:#ff5a5a; letter-spacing:2px; font-size:13px; }
+.row { display:flex; gap:8px; margin-top:10px; }
+.card { flex:1; background:#08122b; border:1px solid #ff2a2a; padding:10px; clip-path:polygon(12px 0, calc(100% - 12px) 0, 100% 12px, 100% calc(100% - 12px), calc(100% - 12px) 100%, 12px 100%, 0 calc(100% - 12px), 0 12px); }
+.card h4 { color:#ff5a5a; margin:0 0 6px; font-size:11px; }
+.card p { margin:4px 0; font-size:11px; color:#7fd8ff; }
+.card p b { color:white; }
+.big { background:#08122b; border:1px solid #ff2a2a; padding:13px; margin-top:10px; clip-path:polygon(15px 0, calc(100% - 15px) 0, 100% 15px, 100% calc(100% - 15px), calc(100% - 15px) 100%, 15px 100%, 0 calc(100% - 15px), 0 15px); }
+.head { display:flex; justify-content:space-between; }
+.head span { color:#ff5a5a; font-weight:bold; font-size:16px; }
+.head b { font-size:22px; }
+.bar { background:#1a1a1a; height:12px; margin-top:8px; }
+.fill { height:100%; background:#ff2a2a; width:98%; }
+.fill2 { height:100%; background:repeating-linear-gradient(90deg,#00d4ff 0 8px, #1a3a5a 8px 11px, #ff2a2a 11px 18px, #333 18px 21px); width:76%; }
+.sub { font-size:10px; color:#7fd8ff; text-align:center; margin-top:6px; }
+.ai-box { background:#020a1a; border:1px solid #00d4ff; padding:12px; font-size:19px; font-weight:bold; }
+button { width:100%; background:#ff2a2a; color:white; border:none; padding:14px; margin-top:9px; font-size:15px; font-weight:bold; }
+</style>
+</head>
+<body>
+<div class="bg"></div>
+<div class="eyes">
+<svg viewBox="0 0 360 180">
+<path d="M10 170 C10 60 80 10 110 5 C110 80 80 150 40 165 C30 168 15 168 10 170 Z" fill="#dfe7ef" stroke="#aab8c5" stroke-width="3"/>
+<path d="M22 155 C22 80 70 30 98 22 C98 80 75 140 45 152 C35 156 25 156 22 155 Z" fill="white" stroke="#1a2433" stroke-width="3"/>
+<path d="M350 170 C350 60 280 10 250 5 C250 80 280 150 320 165 C330 168 345 168 350 170 Z" fill="#dfe7ef" stroke="#aab8c5" stroke-width="3"/>
+<path d="M338 155 C338 80 290 30 262 22 C262 80 285 140 315 152 C325 156 335 156 338 155 Z" fill="white" stroke="#1a2433" stroke-width="3"/>
+</svg>
+</div>
+<div class="top"><b>SPIDER SUIT HUD // ONLINE</b></div>
+<div class="row">
+<div class="card"><h4>SYSTEM STATUS</h4><p>NEURAL LINK: <b>ACTIVE</b></p><p>SUIT ARMOR: <b>98%</b></p></div>
+<div class="card"><h4>ENVIRONMENT</h4><p>ALTITUDE: <b>120M</b></p><p>TEMP: <b>22C</b></p></div>
+</div>
+<div class="big"><div class="head"><span>HEALTH</span><b>98%</b></div><div class="bar"><div class="fill"></div></div></div>
+<div class="big"><div class="head"><span>WEB FLUID LEVEL</span><b style="color:#00d4ff;">76%</b></div><div class="bar"><div class="fill2"></div></div><div class="sub">CARTRIDGES: 4/5 - PRESSURE: OPTIMAL</div></div>
+<div class="big"><div style="color:#ff5a5a; font-size:12px;">AI ASSISTANT</div><div class="ai-box" id="msg">Hello Peter</div></div>
+<button onclick="talk()">TALK TO AI</button>
+<button onclick="shoot()">SHOOT WEB</button>
+<script>
+function talk(){ document.getElementById('msg').innerHTML="Yes Peter? How can I help?"; let s=new SpeechSynthesisUtterance("Yes Peter, how can I help?"); speechSynthesis.speak(s); }
+function shoot(){ document.getElementById('msg').innerHTML="THWIP! Web Shooted!"; alert("THWIP!"); }
+</script>
+</body>
+</html>
